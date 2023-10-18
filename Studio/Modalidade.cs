@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,12 +100,28 @@ namespace Studio
         public bool excluirModalidade()
         {
             bool excluido = false;
+            List<int> arrIdTurma = new List<int>();
 
             try
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set ativa = 0 where idEstudio_Modalidade = '" + id + "'", DAO_Conexao.con);
                 sql.ExecuteNonQuery();
+                DAO_Conexao.con.Close();
+
+                MySqlDataReader dataReaderTurma = Turma.consultarTurmaPorModalidade(id);
+                while(dataReaderTurma.Read())
+                {
+                    
+                    arrIdTurma.Add((int)dataReaderTurma["idEstudio_Turma"]);
+                }
+                DAO_Conexao.con.Close();
+
+                foreach(int idTurma in arrIdTurma)
+                {
+                    Turma.excluirTurmaPorIdTurma(idTurma);
+                }
+
                 excluido = true;
             }
             catch(Exception ex)

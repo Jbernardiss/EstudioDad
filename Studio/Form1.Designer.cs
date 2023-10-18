@@ -39,12 +39,16 @@ namespace Studio
             this.modalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.criarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +57,8 @@ namespace Studio
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
-            this.modalidadeToolStripMenuItem});
+            this.modalidadeToolStripMenuItem,
+            this.turmaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -129,6 +134,30 @@ namespace Studio
             this.excluirModalidadeToolStripMenuItem.Text = "Excluir Modalidade";
             this.excluirModalidadeToolStripMenuItem.Click += new System.EventHandler(this.excluirModalidadeToolStripMenuItem_Click);
             // 
+            // turmaToolStripMenuItem
+            // 
+            this.turmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.criarTurmaToolStripMenuItem,
+            this.excluirTurmaToolStripMenuItem,
+            this.atualizarTurmaToolStripMenuItem});
+            this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
+            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.turmaToolStripMenuItem.Text = "Turma";
+            // 
+            // criarTurmaToolStripMenuItem
+            // 
+            this.criarTurmaToolStripMenuItem.Name = "criarTurmaToolStripMenuItem";
+            this.criarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.criarTurmaToolStripMenuItem.Text = "Criar Turma";
+            this.criarTurmaToolStripMenuItem.Click += new System.EventHandler(this.criarTurmaToolStripMenuItem_Click);
+            // 
+            // excluirTurmaToolStripMenuItem
+            // 
+            this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
+            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
+            this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -188,6 +217,13 @@ namespace Studio
             this.label1.TabIndex = 0;
             this.label1.Text = "Login:";
             // 
+            // atualizarTurmaToolStripMenuItem
+            // 
+            this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
+            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
+            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +262,10 @@ namespace Studio
         private System.Windows.Forms.ToolStripMenuItem modalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criarModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirModalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem criarTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atualizarTurmaToolStripMenuItem;
     }
 }
 

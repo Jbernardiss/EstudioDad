@@ -29,7 +29,6 @@ namespace Studio
             dadosModalidades = Modalidade.consultarTodasModalidades();
 
             comboBoxDescricao.Items.Clear();
-            arrayModalidades = new List<Modalidade>();
 
             while (dadosModalidades.Read())
             {

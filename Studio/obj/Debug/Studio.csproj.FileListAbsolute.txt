@@ -62,25 +62,10 @@ C:\Users\mathe\OneDrive\Documentos\School\school\DAD\Studio\obj\Debug\Studio.csp
 C:\Users\mathe\OneDrive\Documentos\School\school\DAD\Studio\obj\Debug\Studio.csproj.CopyComplete
 C:\Users\mathe\OneDrive\Documentos\School\school\DAD\Studio\obj\Debug\Studio.exe
 C:\Users\mathe\OneDrive\Documentos\School\school\DAD\Studio\obj\Debug\Studio.pdb
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\Studio.exe.config
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\Studio.exe
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\Studio.pdb
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\MySql.Data.dll
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\System.Memory.dll
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\System.Buffers.dll
-C:\Users\aluno\3D Objects\EstudioDad\Studio\bin\Debug\MySql.Data.xml
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.csproj.AssemblyReference.cache
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Form1.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.CadLogin.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Form3.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Form4.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Form5.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Form6.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.Properties.Resources.resources
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.csproj.GenerateResource.cache
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.csproj.CoreCompileInputs.cache
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.csproj.CopyComplete
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.exe
-C:\Users\aluno\3D Objects\EstudioDad\Studio\obj\Debug\Studio.pdb
+C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.Form7.resources
+C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.Form8.resources
+D:\school\DAD\Studio\obj\Debug\Studio.Form5.resources
+D:\school\DAD\Studio\obj\Debug\Studio.Form6.resources
+D:\school\DAD\Studio\obj\Debug\Studio.Form7.resources
+D:\school\DAD\Studio\obj\Debug\Studio.Form8.resources
+C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.Form9.resources
