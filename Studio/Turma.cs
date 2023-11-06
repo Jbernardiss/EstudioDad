@@ -16,10 +16,10 @@ namespace Studio
         public string Professor { get => professor; set => professor = value; }
         public string Dia_semana { get => dia_semana; set => dia_semana = value; }
         public string Hora { get => hora; set => hora = value; }
-        public int Modalidade { get => Modalidade1; set => Modalidade1 = value; }
-        public int Modalidade1 { get => modalidade; set => modalidade = value; }
         public string DescModalidade { get => descModalidade; set => descModalidade = value; }
         public int Id { get => id; set => id = value; }
+        public int Modalidade { get => modalidade; set => modalidade = value; }
+        public int NumeroAlunosTurma { get => numeroAlunosTurma; set => numeroAlunosTurma = value; }
 
         public Turma(int id, string professor, string dia_semana, string hora, string descModalidade)
         {
@@ -30,9 +30,20 @@ namespace Studio
             this.descModalidade = descModalidade;
         }
 
+        public Turma(int id, string professor, string dia_semana, string hora, string descModalidade, int modalidade, int numeroAlunosTurma)
+        {
+            this.id = id;
+            this.professor = professor;
+            this.dia_semana = dia_semana;
+            this.hora = hora;
+            this.descModalidade = descModalidade;
+            this.Modalidade = modalidade;
+            this.NumeroAlunosTurma = numeroAlunosTurma;
+        }
+
         public Turma(int modalidade, string professor, string dia_semana, string hora)
         {
-            this.modalidade = modalidade;
+            this.Modalidade = modalidade;
             this.professor = professor;
             this.dia_semana = dia_semana;
             this.hora = hora;
@@ -40,12 +51,12 @@ namespace Studio
 
         public Turma(int modalidade)
         {
-            this.modalidade = modalidade;
+            this.Modalidade = modalidade;
         }
 
         public Turma(int modalidade, string dia_semana)
         {
-            this.modalidade = modalidade;
+            this.Modalidade = modalidade;
             this.dia_semana = dia_semana;
         }
 
@@ -56,7 +67,7 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) VALUES ('{modalidade}', '{professor}', '{dia_semana}', '{hora}') ", DAO_Conexao.con);
+                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) VALUES ('{Modalidade}', '{professor}', '{dia_semana}', '{hora}') ", DAO_Conexao.con);
                 sql.ExecuteNonQuery();
                 cadastro = true;
 
@@ -93,6 +104,28 @@ namespace Studio
             }
 
             return atualizado;
+        }
+
+        public bool adicionarAluno(string cpfAluno)
+        {
+            bool adicionado = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_TurmaAluno (cpfAluno, idEstudio_Turma) VALUES ('{cpfAluno}', {id}", DAO_Conexao.con);
+                sql.ExecuteNonQuery();
+                adicionado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return adicionado;
         }
 
         static public MySqlDataReader consultarTurmaPorModalidade(int idModalidade)
@@ -176,31 +209,6 @@ namespace Studio
 
             return excluido;
         }
-
-        /*
-        static public bool excluirTurmasPorModalidade(int idModalidade)
-        {
-            bool excluido = false;
-
-            try
-            {
-                DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand($"UPDATE Estudio_Turma SET ativo = 0 WHERE idModalidade = {idModalidade}", DAO_Conexao.con);
-                sql.ExecuteNonQuery();
-                excluido = true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
-            }
-
-            return excluido;
-        }
-        */
 
         static public MySqlDataReader consultarTodasTurmasComDescModalidade()
         {

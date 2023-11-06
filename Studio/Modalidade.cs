@@ -94,7 +94,34 @@ namespace Studio
                 Console.WriteLine(ex.ToString());
             }
 
+
             return dadosModalidade;
+        }
+
+        static public int getQtdeMaximaAlunosModalidade(int idModalidade)
+        {
+            MySqlDataReader dadosModalidade = null;
+            int qtdeAlunos = 0;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"SELECT * FROM Estudio_Modalidade WHERE idEstudio_Modalidade = {idModalidade} AND ativa = 1", DAO_Conexao.con);
+                dadosModalidade = sql.ExecuteReader();
+
+                dadosModalidade.Read();
+                qtdeAlunos = (int) dadosModalidade["qtdeAlunos"];
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return qtdeAlunos;
         }
 
         public bool excluirModalidade()

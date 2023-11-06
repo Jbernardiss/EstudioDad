@@ -79,5 +79,29 @@ namespace Studio
             return tipo;
         }
 
+        public static bool usuarioExiste(string usuario)
+        {
+            bool existe = false;
+            MySqlDataReader resultado = null;
+            try
+            {
+                con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Usuario where usuario = '" + usuario + "'", con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return existe;
+        }
     }
 }

@@ -60,6 +60,7 @@ namespace Studio
             {
                 int id = (int)dadosModalidades["idEstudio_Modalidade"];
                 string desc = dadosModalidades["descricaoModalidade"].ToString();
+
                 double preco = (double)dadosModalidades["precoModalidade"];
                 int qtdeAlunos = (int)dadosModalidades["qtdeAlunos"];
                 int qtdeAulas = (int)dadosModalidades["qtdeAulas"];

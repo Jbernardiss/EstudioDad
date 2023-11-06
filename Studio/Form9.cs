@@ -14,12 +14,26 @@ namespace Studio
     public partial class Form9 : Form
     {
         List<Turma> arrayTurma = new List<Turma>();
+        int tipoUsuario;
 
-        public Form9()
+        public Form9(int tipoUsuario)
         {
             InitializeComponent();
+
+            this.tipoUsuario = tipoUsuario;
+
             carregarTurma();
 
+            if(tipoUsuario == 2)
+            {
+                txtModalidade.Enabled = false;
+                txtProfessor.Enabled = false;
+                txtDiaDaSemana.Enabled = false;
+                txthora.Enabled = false;
+
+                btnAtualizar.Enabled = false;
+                btnAtualizar.Visible = false;
+            }
         }
 
         private void carregarTurma()

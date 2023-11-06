@@ -16,12 +16,23 @@ namespace Studio
         MySqlDataReader dadosModalidades;
         List<Modalidade> arrayModalidades = new List<Modalidade>();
         bool atualizando = false;
+        int tipoUsuario;
 
-        public Form5()
+        public Form5(int tipoUsuario)
         {
             InitializeComponent();
+            this.tipoUsuario = tipoUsuario;
 
             carregarComboBox();
+
+            if(tipoUsuario == 2)
+            {
+                txtPreco.Enabled = false;
+                txtQtdeAluno.Enabled = false;
+                txtQtdeAula.Enabled = false;
+                btnCadastrar.Enabled = false;
+                btnCadastrar.Visible = false;
+            }
         }
 
         private void carregarComboBox()

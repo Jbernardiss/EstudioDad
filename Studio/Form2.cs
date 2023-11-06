@@ -38,5 +38,18 @@ namespace Studio
                 MessageBox.Show("Erro de cadastro!");
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (DAO_Conexao.usuarioExiste(textBox1.Text))
+            {
+                MessageBox.Show("Usuário ja existe!");
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
+        }
     }
 }
