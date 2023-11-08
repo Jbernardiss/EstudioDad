@@ -124,27 +124,29 @@ namespace Studio
 
             if(acao == 0)
             {
-                if (matricula.cadastrarMatricula())
-                {
-                    int qtdeMaxima = Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade);
+                int qtdeMaxima = Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade);
 
-                    if (arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma < qtdeMaxima)
+                if (arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma < qtdeMaxima)
+                {
+                    if(matricula.cadastrarMatricula())
                     {
                         MessageBox.Show("Matrícula feita com sucesso!");
                         carregarTurmas();
                     }
                     else
                     {
-                        MessageBox.Show("A classe já está cheia!");
+                        MessageBox.Show("Erro ao realizar matrícula.");
                     }
-
-
+                        
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao realizar matrícula");
+                    MessageBox.Show("A classe já está cheia!");
                 }
+
+
             }
+
             else if(acao == 1)
             {
                 if(matricula.apagarMatricula())

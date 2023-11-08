@@ -67,7 +67,7 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) VALUES ('{Modalidade}', '{professor}', '{dia_semana}', '{hora}') ", DAO_Conexao.con);
+                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma, nAlunosTurma) VALUES ('{Modalidade}', '{professor}', '{dia_semana}', '{hora}', 0) ", DAO_Conexao.con);
                 sql.ExecuteNonQuery();
                 cadastro = true;
 

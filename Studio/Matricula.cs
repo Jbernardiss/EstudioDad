@@ -39,9 +39,7 @@ namespace Studio
                 dadosTurma = sql.ExecuteReader();
 
                 dadosTurma.Read();
-                MessageBox.Show($"{dadosTurma["idEstudio_Turma"]}");
                 int currentAlunos = Convert.ToInt32(dadosTurma["nAlunosTurma"].ToString());
-                MessageBox.Show($"{currentAlunos}");
                 DAO_Conexao.con.Close();
 
                 DAO_Conexao.con.Open();
@@ -107,9 +105,7 @@ namespace Studio
                 dadosTurma = sql.ExecuteReader();
 
                 dadosTurma.Read();
-                MessageBox.Show($"{dadosTurma["idEstudio_Turma"]}");
                 int currentAlunos = Convert.ToInt32(dadosTurma["nAlunosTurma"].ToString());
-                MessageBox.Show($"{currentAlunos}");
                 DAO_Conexao.con.Close();
 
                 DAO_Conexao.con.Open();
@@ -136,6 +132,24 @@ namespace Studio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand sql = new MySqlCommand($"SELECT Estudio_Aluno.nomeAluno, Estudio_Matricula.*, Estudio_Turma.idModalidade, Estudio_Modalidade.descricaoModalidade FROM (((Estudio_Aluno INNER JOIN Estudio_Matricula ON Estudio_Aluno.CPFAluno = Estudio_Matricula.cpfAluno) INNER JOIN Estudio_Turma ON Estudio_Matricula.idTurma = Estudio_Turma.idEstudio_Turma) INNER JOIN Estudio_Modalidade ON Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade)", DAO_Conexao.con);
+                dadosMatricula = sql.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return dadosMatricula;
+        }
+
+        public static MySqlDataReader consultarMatriculasPorIdTurma(int idTurma)
+        {
+            MySqlDataReader dadosMatricula = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"SELECT Estudio_Aluno.nomeAluno, Estudio_Matricula.idTurma FROM Estudio_Aluno INNER JOIN Estudio_Matricula ON Estudio_Aluno.CPFAluno = Estudio_Matricula.cpfAluno WHERE idTurma = {idTurma}", DAO_Conexao.con);
                 dadosMatricula = sql.ExecuteReader();
             }
             catch (Exception ex)
